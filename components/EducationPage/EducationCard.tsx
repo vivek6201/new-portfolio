@@ -17,8 +17,8 @@ type Props = {
 export default function EducationCard(props: Props) {
   return (
     <div className="relative">
-      <div className="flex flex-col justify-evenly rounded-3xl px-10 py-5 min-h-[350px] bg-richBlack dark:bg-offWhite bg-opacity-80 hover:bg-opacity-100 dark:hover:bg-opacity-100 dark:bg-opacity-80 backdrop-blur-md my-10 transition-all duration-300 group">
-        <div className="flex justify-between items-center w-full">
+      <div className="flex flex-col justify-evenly rounded-3xl px-5 md:px-10 py-5 min-h-[300px] md:min-h-[350px] bg-richBlack dark:bg-offWhite bg-opacity-80 hover:bg-opacity-100 dark:hover:bg-opacity-100 dark:bg-opacity-80 backdrop-blur-md my-5 md:my-10 transition-all duration-300 group">
+        <div className="flex justify-between flex-col md:flex-row gap-3 items-start md:items-center w-full">
           <div className="flex items-center gap-5 bg-offWhite dark:bg-richBlack text-black dark:text-offWhite px-5 py-2 rounded-full">
             <Calendar size={24} fontWeight={700} />
             <p className="font-bold">
@@ -35,19 +35,19 @@ export default function EducationCard(props: Props) {
         <p className="bg-richBlack dark:bg-white text-white dark:text-richBlack px-5 py-2 rounded-full my-5 font-bold self-start group-hover:bg-primaryBg transition-all duration-300">
           {props.degreeType}
         </p>
-        <p className="font-extrabold text-white dark:text-richBlack text-2xl">
+        <p className="font-extrabold text-white dark:text-richBlack text-xl md:text-2xl">
           {props.degree}
         </p>
         <div className="flex flex-col gap-2 my-5">
           <div className="flex items-center font-bold gap-5">
-            <IoMdSchool className="text-white dark:text-richBlack text-3xl" />
-            <p className="text-white dark:text-richBlack font-medium text-lg">
+            <IoMdSchool className="text-white dark:text-richBlack text-2xl md:text-3xl" />
+            <p className="text-white dark:text-richBlack font-medium text-base md:text-lg">
               {props.instituteName}
             </p>
           </div>
           <div className="flex items-center font-bold gap-5">
-            <IoLocationOutline className="text-white dark:text-richBlack text-3xl" />
-            <p className="text-white dark:text-richBlack font-medium text-lg">
+            <IoLocationOutline className="text-white dark:text-richBlack text-2xl md:text-3xl" />
+            <p className="text-white dark:text-richBlack font-medium text-base md:text-lg">
               {props.location}
             </p>
           </div>

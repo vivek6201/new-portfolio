@@ -27,7 +27,7 @@ export default function Education() {
   return (
     <div className="flex flex-col max-w-[1350px] mx-auto w-10/12 my-12">
       <PageTitle title="Education" />
-      <div className=" grid grid-cols-1 md:grid-cols-2 gap-5">
+      <div className=" grid grid-cols-1 xl:grid-cols-2 gap-5">
         {educationData.map((education) => {
           return <EducationCard {...education} key={education.degreeType}/>;
         })}

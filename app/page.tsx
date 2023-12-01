@@ -1,10 +1,10 @@
 import { FiDownload } from "react-icons/fi";
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import SkillChip from "@/components/small-elements/SkillChip";
 import CustomButton from "@/components/Common/CustomButton";
 
 export default function Home() {
+
   return (
     <div className="overflow-hidden">
       <div
