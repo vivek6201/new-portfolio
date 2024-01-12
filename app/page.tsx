@@ -2,6 +2,7 @@ import { FiDownload } from "react-icons/fi";
 import Image from "next/image";
 import SkillChip from "@/components/small-elements/SkillChip";
 import CustomButton from "@/components/Common/CustomButton";
+import Link from "next/link";
 
 export default function Home() {
 
@@ -21,11 +22,11 @@ export default function Home() {
         </p>
 
         <div className="flex gap-5 items-center justify-center my-10">
-          <CustomButton variant={"outline"} colorProperty="border-[#CE5A67] hover:bg-[#CE5A67] hover:text-offWhite">
+          <a href={"/resume.pdf"} download className="border rounded-full flex items-center transition-colors duration-200 gap-2 px-5 py-2 border-[#CE5A67] hover:bg-[#CE5A67] hover:text-offWhite">
             <FiDownload />
             Resume
-          </CustomButton>
-          <CustomButton variant={"outline"} colorProperty="bg-[#CE5A67] hover:bg-[#CE5A67] text-white hover:text-white" >Hire Me</CustomButton>
+          </a>
+          <Link href={"/contact"} className="border rounded-full flex items-center gap-2 px-5 py-2 transition-colors duration-200 bg-[#CE5A67] hover:bg-[#CE5A67] text-white hover:text-white" >Hire Me</Link>
         </div> 
 
         <div className="w-full h-[350px] mt-12 flex justify-center items-center relative z-10">
