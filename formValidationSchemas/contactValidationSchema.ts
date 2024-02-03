@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const contactSchema = z.object({
+export const contactValidationSchema = z.object({
   name: z.string(),
   email: z.string().email(),
   message: z

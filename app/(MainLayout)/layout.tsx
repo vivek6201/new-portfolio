@@ -7,7 +7,7 @@ export default function MainLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div>
+    <div className="py-10 min-h-screen">
       <Navbar />
       {children}
     </div>

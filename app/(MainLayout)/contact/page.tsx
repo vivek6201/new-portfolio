@@ -15,24 +15,24 @@ import {
 import { Input } from "@/components/ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { contactSchema } from "@/lib/contactSchema";
+import { contactValidationSchema } from "@/formValidationSchemas/contactValidationSchema";
 import { z } from "zod";
 import { Textarea } from "@/components/ui/textarea";
 import Image from "next/image";
 
 export default function Contact() {
-  const form = useForm<z.infer<typeof contactSchema>>({
-    resolver: zodResolver(contactSchema),
+  const form = useForm<z.infer<typeof contactValidationSchema>>({
+    resolver: zodResolver(contactValidationSchema),
   });
 
-  function onSubmit(values: z.infer<typeof contactSchema>) {
+  function onSubmit(values: z.infer<typeof contactValidationSchema>) {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
     console.log(values);
   }
 
   return (
-    <div className="max-w-[1350px] mx-auto w-11/12 md:w-10/12 rounded-2xl md:rounded-[4rem] my-10 dark:bg-white bg-richBlack px-5 py-10 md:py-12 sm:px-10 md:px-12 relative overflow-hidden">
+    <div className="max-w-[1350px] h-full mx-auto w-11/12 md:w-10/12 rounded-2xl md:rounded-[4rem] mt-10 dark:bg-white bg-richBlack px-5 py-10 md:py-12 sm:px-10 md:px-12 relative overflow-hidden">
       <p className="text-center dark:text-richBlack text-offWhite font-extrabold font-ubuntu text-2xl md:text-3xl lg:text-4xl">
         Let's Get in Touch
       </p>
