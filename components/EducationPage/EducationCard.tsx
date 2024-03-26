@@ -5,12 +5,12 @@ import { IoLocationOutline } from "react-icons/io5";
 import { IoMdSchool } from "react-icons/io";
 
 type Props = {
-  instituteName: string;
+  schoolName: string;
   location: string;
   startDate: string;
   endDate: string;
+  courseName: string;
   degree: string;
-  EducationType: string;
   degreeType: string;
 };
 
@@ -28,7 +28,7 @@ export default function EducationCard(props: Props) {
           <div className="flex items-center gap-5 justify-center bg-offWhite dark:bg-richBlack px-5 py-2 rounded-full group-hover:bg-primaryBg transition-all duration-300">
             <FcGraduationCap size={24} />
             <p className="text-black dark:text-offWhite font-bold group-hover:text-richBlack transition-all duration-300">
-              {props.EducationType}
+              {props.degree}
             </p>
           </div>
         </div>
@@ -36,13 +36,13 @@ export default function EducationCard(props: Props) {
           {props.degreeType}
         </p>
         <p className="font-extrabold text-white dark:text-richBlack text-xl md:text-2xl">
-          {props.degree}
+          {props.courseName}
         </p>
         <div className="flex flex-col gap-2 my-5">
           <div className="flex items-center font-bold gap-5">
             <IoMdSchool className="text-white dark:text-richBlack text-2xl md:text-3xl" />
             <p className="text-white dark:text-richBlack font-medium text-base md:text-lg">
-              {props.instituteName}
+              {props.schoolName}
             </p>
           </div>
           <div className="flex items-center font-bold gap-5">

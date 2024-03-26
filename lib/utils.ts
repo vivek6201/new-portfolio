@@ -41,3 +41,6 @@ export const dashboardRoutes = [
     link: "/dashboard/education",
   },
 ];
+
+export const backendUrl = process.env.NEXT_PUBLIC_STRAPI_API_URL
+export const apiToken = process.env.NEXT_PUBLIC_STRAPI_API_TOKEN

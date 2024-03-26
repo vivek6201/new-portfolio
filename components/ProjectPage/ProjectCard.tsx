@@ -13,11 +13,14 @@ import {
 } from "../ui/tooltip";
 
 type Props = {
-  projectTitle: string;
-  deployedLink: string;
-  githubLink: string;
+  Title: string;
+  deployedUrl: string;
+  githubUrl:string;
+  startDate:string;
+  endDate:string;
   image: string;
-  projectData: string[];
+  description: string;
+  skills: Object[]
 };
 
 export default function ProjectCard(props: Props) {
@@ -25,7 +28,7 @@ export default function ProjectCard(props: Props) {
     <div className="max-w-[85rem] ">
       <div className="group flex flex-col h-full bg-richBlack dark:bg-offWhite bg-opacity-80 hover:bg-opacity-100 dark:hover:bg-opacity-100 dark:bg-opacity-80 backdrop-blur-md my-5 md:my-10 transition-all duration-300 group rounded-xl p-5 relative">
         <div className="h-52 flex flex-col justify-center items-center rounded-t-xl">
-          <svg
+          {/* <svg
             className="w-28 h-28"
             width="56"
             height="56"
@@ -55,27 +58,26 @@ export default function ProjectCard(props: Props) {
                 <stop offset="0.92" stop-color="#2684FF" />
               </linearGradient>
             </defs>
-          </svg>
+          </svg> */}
         </div>
         <div className="py-4 md:py-6">
           <h3 className="text-xl font-bold text-primaryBg dark:text-richBlack">
-            Study Notion
+            {props.Title}
           </h3>
           <p className="mt-3 text-offWhite dark:text-richBlack ">
-            An ed-tech platform for students and teachers to buy and sell
-            courses.
+            {props.description}
           </p>
         </div>
         <div className="flex flex-col md:flex-row gap-2 items-center justify-between mt-5">
           <Link
             className="w-full font-semibold text-primaryBg ring-1 ring-primaryBg group-hover:bg-primaryBg group-hover:text-black rounded-full text-center dark:ring-richBlack dark:ring-1 dark:group-hover:ring-primaryBg dark:group-hover:bg-primaryBg dark:text-black dark:group-hover:text-white py-2 transition-all duration-200"
-            href="#"
+            href={props.deployedUrl ?? ""}
           >
             Go to Project
           </Link>
           <Link
             className="w-full font-semibold text-primaryBg ring-1 ring-primaryBg group-hover:bg-primaryBg group-hover:text-richBlack dark:ring-richBlack dark:ring-1 dark:group-hover:ring-primaryBg rounded-full text-center dark:group-hover:bg-primaryBg dark:text-black dark:group-hover:text-white py-2 transition-all duration-200"
-            href="#"
+            href={props.githubUrl ?? ""}
           >
             View Source
           </Link>

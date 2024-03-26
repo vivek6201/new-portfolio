@@ -6,34 +6,37 @@ import { CiPaperplane } from "react-icons/ci";
 
 type Props = {
   companyName: string;
-  companyLocation: string;
+  location: string;
   startDate: string;
   endDate: string;
   role: string;
-  workData: string[];
-  compamnyLogo: string;
+  description: string;
+  compamnyLogo?: string;
 };
 
 export default function ExperienceCard(props: Props) {
+
+  const workData = props.description.split(",");
+
   return (
     <div className="relative w-full">
       <div className="flex flex-col justify-evenly rounded-3xl px-5 md:px-10 py-5 min-h-[300px] w-full md:min-h-[350px] bg-richBlack dark:bg-offWhite bg-opacity-80 hover:bg-opacity-100 dark:hover:bg-opacity-100 dark:bg-opacity-80 backdrop-blur-md my-5 md:my-10 transition-all duration-300 group">
         <div className="flex justify-between flex-col md:flex-row gap-3 items-start md:items-center w-full">
           <div className="flex items-center gap-5 justify-between bg-offWhite dark:bg-richBlack pr-5 rounded-full">
-            <Image
+            {/* <Image
               alt="companyLogo"
               src={props.compamnyLogo}
               width={100}
               height={100}
               className="rounded-full w-24 h-24"
-            />
+            /> */}
             <div className="flex flex-col gap-y-2">
               <p className="text-black dark:text-primaryBg text-lg font-bold">
                 {props.companyName}
               </p>
               <div className="flex items-center gap-2 text-sm">
                 <IoLocationOutline />
-                <p>{props.companyLocation}</p>
+                <p>{props.location}</p>
               </div>
             </div>
           </div>
@@ -53,7 +56,7 @@ export default function ExperienceCard(props: Props) {
         </p>
         <div className="flex flex-col gap-2 my-5">
           <div className="flex flex-col px-2 font-bold gap-5">
-            {props.workData.map((data, index) => (
+            {workData.map((data, index) => (
               <p
                 className="text-white align-middle dark:text-richBlack font-medium text-base md:text-lg"
                 key={index}
