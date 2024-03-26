@@ -12,7 +12,7 @@ const getData = async () => {
     }
   });
   return data;
-} 
+}
 
 export default async function About() {
 
