@@ -16,8 +16,9 @@ export default function DashboardLayout({
 
   const handleLogout = async () => {
     try {
-      const res = await fetch("/api/logout", {
+      const res = await fetch("http://localhost:4000/api/v1/user/logout", {
         method: "DELETE",
+        credentials: "include",
       });
 
       if (res.ok) {
