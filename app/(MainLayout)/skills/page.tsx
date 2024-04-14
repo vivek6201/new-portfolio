@@ -5,7 +5,6 @@ import { urlFor } from "@/sanity/sanity.client";
 import { getSkills } from "@/sanity/sanity.query";
 import { SkillType } from "@/types";
 import React from "react";
-import { FiDownload } from "react-icons/fi";
 
 export default async function Projects() {
   const skills = await getSkills();

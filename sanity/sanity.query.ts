@@ -6,21 +6,27 @@ export async function getUser() {
     groq`*[_type == "user"][0]{
       ...,
       socials[]->
-    }`
+    }`,
+    {},
+    { next: { revalidate: 10 } }
   );
 }
 export async function getEducations() {
   return client.fetch(
     groq`*[_type == "education"]{
       ...,
-    }`
+    }`,
+    {},
+    { next: { revalidate: 10 } }
   );
 }
 export async function getExperience() {
   return client.fetch(
     groq`*[_type == "experience"]{
       ...,
-    }`
+    }`,
+    {},
+    { next: { revalidate: 10 } }
   );
 }
 export async function getProjects() {
@@ -28,7 +34,9 @@ export async function getProjects() {
     groq`*[_type == "projects"]{
       ...,
       skills[]->
-    }`
+    }`,
+    {},
+    { next: { revalidate: 10 } }
   );
 }
 export async function getSkills() {
@@ -39,6 +47,8 @@ export async function getSkills() {
       toolType,
       createdAt,
       _id
-    }`
+    }`,
+    {},
+    { next: { revalidate: 10 } }
   );
 }
