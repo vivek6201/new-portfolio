@@ -34,7 +34,7 @@ export default function Contact() {
   return (
     <div className="max-w-[1350px] h-full mx-auto w-11/12 md:w-10/12 rounded-2xl md:rounded-[4rem] mt-10 dark:bg-white bg-richBlack px-5 py-10 md:py-12 sm:px-10 md:px-12 relative overflow-hidden">
       <p className="text-center dark:text-richBlack text-offWhite font-extrabold font-ubuntu text-2xl md:text-3xl lg:text-4xl">
-        Let's Get in Touch
+        Let&apos;s Get in Touch
       </p>
       <Form {...form}>
         <form
