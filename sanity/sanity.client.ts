@@ -6,7 +6,6 @@ const config: ClientConfig = {
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "",
   dataset: "production",
   apiVersion: "2024-04-11",
-  useCdn: false,
 };
 
 const client = createClient(config);

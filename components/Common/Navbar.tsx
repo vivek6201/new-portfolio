@@ -50,7 +50,7 @@ export default function Navbar() {
   ];
 
   return (
-    <div className="dark:bg-[#FCF5ED] rounded-full p-3 max-w-[1350px] w-10/12 mx-auto bg-richBlack h-14 md:h-20 flex items-center justify-between">
+    <div className="dark:bg-[#FCF5ED] rounded-full p-3 max-w-[1350px] w-11/12 mx-auto bg-richBlack h-14 md:h-20 flex items-center justify-between">
       <Link href="/">
         <div className="flex items-center gap-2">
           <div className="rounded-full bg-offWhite dark:bg-primaryBg w-10 h-10 md:w-16 md:h-16 flex justify-center items-center">
