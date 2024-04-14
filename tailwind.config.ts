@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 
-const { fontFamily } = require("tailwindcss/defaultTheme");
+import { fontFamily } from "tailwindcss/defaultTheme";
 
 module.exports = {
   darkMode: ["class"],
@@ -77,7 +77,7 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       fontFamily: {
-        sans: ["var(--font-sans)", ...fontFamily.sans],
+        sans: ["var(--font-inter)", ...fontFamily.sans],
         ubuntu: ["Ubuntu", "sans-serif"],
         pacifico: ["Pacifico", "cursive"],
       },
