@@ -20,10 +20,7 @@ export async function getExperience() {
   return client.fetch(
     groq`*[_type == "experience"]{
       ...,
-    }`,
-    {
-      cache: "no-store",
-    }
+    }`
   );
 }
 export async function getProjects() {
@@ -45,5 +42,3 @@ export async function getSkills() {
     }`
   );
 }
-
-
