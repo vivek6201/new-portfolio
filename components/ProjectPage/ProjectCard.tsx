@@ -30,8 +30,8 @@ export default function ProjectCard(props: ProjectType) {
           <h3 className="text-xl font-bold text-primaryBg dark:text-richBlack">
             {props.projectTitle}
           </h3>
-          {props.projectData.map((data) => (
-            <p className="mt-3 text-offWhite dark:text-richBlack ">{data}</p>
+          {props.projectData.map((data,index) => (
+            <p className="mt-3 text-offWhite dark:text-richBlack " key={index}>{data}</p>
           ))}
         </div>
         <div className="flex flex-col md:flex-row gap-2 items-center justify-between mt-5">
