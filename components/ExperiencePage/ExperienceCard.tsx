@@ -3,18 +3,10 @@ import { Calendar } from "lucide-react";
 import { IoLocationOutline } from "react-icons/io5";
 import Image from "next/image";
 import { CiPaperplane } from "react-icons/ci";
+import { urlFor } from "@/sanity/sanity.client";
+import { ExperienceType } from "@/types";
 
-type Props = {
-  companyName: string;
-  companyLocation: string;
-  startDate: string;
-  endDate: string;
-  role: string;
-  workData: string[];
-  compamnyLogo: string;
-};
-
-export default function ExperienceCard(props: Props) {
+export default function ExperienceCard(props: ExperienceType) {
   return (
     <div className="relative w-full">
       <div className="flex flex-col justify-evenly rounded-3xl px-5 md:px-10 py-5 min-h-[300px] w-full md:min-h-[350px] bg-richBlack dark:bg-offWhite bg-opacity-80 hover:bg-opacity-100 dark:hover:bg-opacity-100 dark:bg-opacity-80 backdrop-blur-md my-5 md:my-10 transition-all duration-300 group">
@@ -22,12 +14,12 @@ export default function ExperienceCard(props: Props) {
           <div className="flex items-center gap-5 justify-between bg-offWhite dark:bg-richBlack pr-5 rounded-full">
             <Image
               alt="companyLogo"
-              src={props.compamnyLogo}
+              src={urlFor(props.companyLogo).url()}
               width={100}
               height={100}
-              className="rounded-full w-24 h-24"
+              className="rounded-full w-20 h-14 object-contain"
             />
-            <div className="flex flex-col gap-y-2">
+            <div className="flex flex-col gap-y-2 py-2">
               <p className="text-black dark:text-primaryBg text-lg font-bold">
                 {props.companyName}
               </p>

@@ -3,18 +3,9 @@ import { Calendar } from "lucide-react";
 import { FcGraduationCap } from "react-icons/fc";
 import { IoLocationOutline } from "react-icons/io5";
 import { IoMdSchool } from "react-icons/io";
+import { EducationType } from "@/types";
 
-type Props = {
-  instituteName: string;
-  location: string;
-  startDate: string;
-  endDate: string;
-  degree: string;
-  EducationType: string;
-  degreeType: string;
-};
-
-export default function EducationCard(props: Props) {
+export default function EducationCard(props: EducationType) {
   return (
     <div className="relative">
       <div className="flex flex-col justify-evenly rounded-3xl px-5 md:px-10 py-5 min-h-[300px] md:min-h-[350px] bg-richBlack dark:bg-offWhite bg-opacity-80 hover:bg-opacity-100 dark:hover:bg-opacity-100 dark:bg-opacity-80 backdrop-blur-md my-5 md:my-10 transition-all duration-300 group">
@@ -28,12 +19,12 @@ export default function EducationCard(props: Props) {
           <div className="flex items-center gap-5 justify-center bg-offWhite dark:bg-richBlack px-5 py-2 rounded-full group-hover:bg-primaryBg transition-all duration-300">
             <FcGraduationCap size={24} />
             <p className="text-black dark:text-offWhite font-bold group-hover:text-richBlack transition-all duration-300">
-              {props.EducationType}
+              {props.educationType}
             </p>
           </div>
         </div>
         <p className="bg-richBlack dark:bg-white text-white dark:text-richBlack px-5 py-2 rounded-full my-5 font-bold self-start group-hover:bg-primaryBg transition-all duration-300">
-          {props.degreeType}
+          {props.degreetype}
         </p>
         <p className="font-extrabold text-white dark:text-richBlack text-xl md:text-2xl">
           {props.degree}

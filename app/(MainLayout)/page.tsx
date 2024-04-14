@@ -1,10 +1,12 @@
 import { FiDownload } from "react-icons/fi";
 import Image from "next/image";
 import SkillChip from "@/components/small-elements/SkillChip";
-import CustomButton from "@/components/Common/CustomButton";
 import Link from "next/link";
+import { UserType } from "@/types";
+import { getUser } from "@/sanity/sanity.query";
 
-export default function Home() {
+export default async function Home() {
+  const user: UserType = await getUser();
 
   return (
     <div className="overflow-hidden">
@@ -13,21 +15,39 @@ export default function Home() {
       >
         <div>
           <p className="font-ubuntu font-extrabold text-4xl md:text-5xl lg:text-6xl mt-10 text-center">
-            Hello! I'm <span className="text-[#CE5A67]">Vivek Kumar Gupta</span>
+            Hello! I'm <span className="text-[#CE5A67]">{user.fullName}</span>
           </p>
         </div>
         <p className="mt-4 text-2xl md:text-3xl text-center text-ellipsis max-w-xl">
-          A <span className="font-bold">Full Stack Developer</span> |{" "}
-          <span className="font-bold">Web Designer</span>
+          A <span className="font-bold">{user.role}</span>
         </p>
 
-        <div className="flex gap-5 items-center justify-center my-10">
-          <a href={"/resume.pdf"} download className="border rounded-full flex items-center transition-colors duration-200 gap-2 px-5 py-2 border-[#CE5A67] hover:bg-[#CE5A67] hover:text-offWhite">
+        <div className="flex gap-3 md:gap-5 items-center justify-center my-10">
+          <a
+            href={"/resume.pdf"}
+            download
+            className="border rounded-full flex items-center transition-colors duration-200 gap-2 px-4 md:px-5 py-1 md:py-2 border-[#CE5A67] hover:bg-[#CE5A67] hover:text-offWhite"
+          >
             <FiDownload />
             Resume
           </a>
-          <Link href={"/contact"} className="border rounded-full flex items-center gap-2 px-5 py-2 transition-colors duration-200 bg-[#CE5A67] hover:bg-[#CE5A67] text-white hover:text-white" >Hire Me</Link>
-        </div> 
+          <Link
+            href={"/contact"}
+            className="border rounded-full flex items-center gap-2 px-4 md:px-5 py-1 md:py-2 transition-colors duration-200 bg-[#CE5A67] hover:bg-[#CE5A67] text-white hover:text-white"
+          >
+            Hire Me
+          </Link>
+        </div>
+
+        <div className="flex gap-2 md:gap-4 items-center">
+          {
+            user.socials.map((social) =>(
+              <div className="rounded-full cursor-pointer bg-[#ce5ab1] hover:bg-[#CE5A67] text-white px-4 py-1" key={social.title}>
+                <Link href={social.url} target="_blank" className="text-sm font-medium">{social.title}</Link>
+              </div>
+            ))
+          }
+        </div>
 
         <div className="w-full h-[350px] mt-12 flex justify-center items-center relative z-10">
           <Image
