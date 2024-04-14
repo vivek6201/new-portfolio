@@ -15,7 +15,7 @@ export default async function Home() {
       >
         <div>
           <p className="font-ubuntu font-extrabold text-4xl md:text-5xl lg:text-6xl mt-10 text-center">
-            Hello! I'm <span className="text-[#CE5A67]">{user.fullName}</span>
+            Hello! I&apos;m <span className="text-[#CE5A67]">{user.fullName}</span>
           </p>
         </div>
         <p className="mt-4 text-2xl md:text-3xl text-center text-ellipsis max-w-xl">
