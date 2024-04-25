@@ -54,4 +54,5 @@ export type ProjectType = {
   githubLink: string;
   projectThumbnail: string;
   projectData: string[];
+  skills: SkillType[]
 };
