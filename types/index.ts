@@ -15,6 +15,7 @@ export type UserType = {
     title: string;
     url: string;
   }[];
+  resume: any;
 };
 
 export type EducationType = {
@@ -54,5 +55,5 @@ export type ProjectType = {
   githubLink: string;
   projectThumbnail: string;
   projectData: string[];
-  skills: SkillType[]
+  skills: SkillType[];
 };

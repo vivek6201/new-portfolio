@@ -15,7 +15,8 @@ export default async function Home() {
       >
         <div>
           <p className="font-ubuntu font-extrabold text-4xl md:text-5xl lg:text-6xl mt-10 text-center">
-            Hello! I&apos;m <span className="text-[#CE5A67]">{user.fullName}</span>
+            Hello! I&apos;m{" "}
+            <span className="text-[#CE5A67]">{user.fullName}</span>
           </p>
         </div>
         <p className="mt-4 text-2xl md:text-3xl text-center text-ellipsis max-w-xl">
@@ -24,7 +25,7 @@ export default async function Home() {
 
         <div className="flex gap-3 md:gap-5 items-center justify-center my-10">
           <a
-            href={"/resume.pdf"}
+            href={'/resume.pdf'}
             download
             className="border rounded-full flex items-center transition-colors duration-200 gap-2 px-4 md:px-5 py-1 md:py-2 border-[#CE5A67] hover:bg-[#CE5A67] hover:text-offWhite"
           >
@@ -40,13 +41,20 @@ export default async function Home() {
         </div>
 
         <div className="flex gap-2 md:gap-4 items-center">
-          {
-            user.socials.map((social) =>(
-              <div className="rounded-full cursor-pointer bg-[#ce5ab1] hover:bg-[#CE5A67] text-white px-4 py-1" key={social.title}>
-                <Link href={social.url} target="_blank" className="text-sm font-medium">{social.title}</Link>
-              </div>
-            ))
-          }
+          {user.socials.map((social) => (
+            <div
+              className="rounded-full cursor-pointer bg-[#ce5ab1] hover:bg-[#CE5A67] text-white px-4 py-1"
+              key={social.title}
+            >
+              <Link
+                href={social.url}
+                target="_blank"
+                className="text-sm font-medium"
+              >
+                {social.title}
+              </Link>
+            </div>
+          ))}
         </div>
 
         <div className="w-full h-[350px] mt-12 flex justify-center items-center relative z-10">

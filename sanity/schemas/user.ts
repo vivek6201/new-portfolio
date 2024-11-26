@@ -51,6 +51,13 @@ const user = {
       ],
       validation: (rule) => rule.required(),
     }),
+    defineField({
+      name: 'resume',
+      type: 'file',  
+      options: {
+        accept: 'application/pdf'
+      }
+    })
   ],
 };
 
